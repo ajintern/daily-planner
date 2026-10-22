@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>Daily Planner</h1>
+            <p>Schedule & Track</p>
+            <div class="stats-pill" id="statsDisplay">Loading...</div>
+        </header>
+
+        <main class="panel">
+            <!-- Add Form -->
+            <form id="addForm" class="add-form">
+                <input type="text" name="task" placeholder="Add a schedule" required class="input-field main-input">
+                
+                <div class="datetime-group">
+                    <input type="date" name="date" required class="input-field date-picker">
+                    <input type="time" name="time" required class="input-field time-picker">
+                </div>
+                
+                <button type="submit" class="btn-add">Add</button>
+            </form>
+                 <!-- ADD THIS BLOCK -->
+<div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('all')">All Tasks</button>
+    <button class="filter-btn" onclick="setFilter('active')">Active</button>
+    <button class="filter-btn" onclick="setFilter('completed')">Completed</button>
+</div>
+            <!-- Task List Container -->
+            <ul id="taskList" class="todo-list">
+                <!-- JS will inject items here -->
+            </ul>
+            
+            <div id="emptyState" class="empty-view" style="display:none;">
+                Your schedule is clear.
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Modal (Hidden by default) -->
+    <div id="editModal" class="modal-bg" style="display:none;">
+        <div class="modal-box">
+            <h2>Edit Task</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                
+                <label>Description</label>
+                <input type="text" id="editText" required class="modal-input">
+                
+                <div class="modal-split">
+                    <div>
+                        <label>Date</label>
+                        <input type="date" id="editDate" required class="modal-input">
+                    </div>
+                    <div>
+                        <label>Time</label>
+                        <input type="time" id="editTime" required class="modal-input">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="button" onclick="closeModal()" class="btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
