@@ -7,10 +7,14 @@ I built this using a decoupled monorepo structure. The backend is a REST API wri
 
 Key Features
 RESTful API: The Go backend handles all the data using standard GET, POST, PATCH, and DELETE requests.
+
 Smart "Late" Detection: The server checks the current time against the task deadline. If a task is overdue, it automatically flags it as "Late" before sending the data to the browser, ensuring the time is always accurate.
+
 Secure Database Connection: I used Firebase Firestore for the database. The sensitive service account keys stay safely on the backend, so they are never exposed to the frontend.
 Lightweight Frontend: No heavy frameworks here. I used vanilla JavaScript to keep the project simple and easy to understand.
+
 CORS Handling: I implemented custom middleware in Go to allow the frontend and backend to communicate smoothly during local development.
+
 Technology Stack
 Backend: Go (Golang)
 Database: Firebase Cloud Firestore
