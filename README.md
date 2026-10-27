@@ -1,6 +1,10 @@
 Daily Planner Application
+
+
 A full-stack web application I built to practice GoLang and API development. It helps users schedule, track, and manage their daily tasks.
+
 I built this using a decoupled monorepo structure. The backend is a REST API written in Go, and the frontend is built with plain HTML, CSS, and JavaScript. They communicate with each other using JSON. I chose this setup to keep the business logic secure on the server while keeping the frontend lightweight and fast.
+
 Key Features
 RESTful API: The Go backend handles all the data using standard GET, POST, PATCH, and DELETE requests.
 Smart "Late" Detection: The server checks the current time against the task deadline. If a task is overdue, it automatically flags it as "Late" before sending the data to the browser, ensuring the time is always accurate.
