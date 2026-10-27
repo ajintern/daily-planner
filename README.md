@@ -5,35 +5,43 @@ A full-stack web application I built to practice GoLang and API development. It 
 
 I built this using a decoupled monorepo structure. The backend is a REST API written in Go, and the frontend is built with plain HTML, CSS, and JavaScript. They communicate with each other using JSON. I chose this setup to keep the business logic secure on the server while keeping the frontend lightweight and fast.
 
-Key Features
+**Key Features**
 
-  - RESTful API: The Go backend handles all the data using standard GET, POST, PATCH, and DELETE requests.
+  **- RESTful API:** The Go backend handles all the data using standard GET, POST, PATCH, and DELETE requests.
 
-  - Smart "Late" Detection: The server checks the current time against the task deadline. If a task is overdue, it automatically flags it as "Late" before sending the data to the      browser, ensuring the time is always accurate.
+  **- Smart "Late" Detection:** The server checks the current time against the task deadline. If a task is overdue, it automatically flags it as "Late" before sending the data to the      browser, ensuring the time is always accurate.
 
-  - Secure Database Connection: I used Firebase Firestore for the database. The sensitive service account keys stay safely on the backend, so they are never exposed to the frontend.
-Lightweight Frontend: No heavy frameworks here. I used vanilla JavaScript to keep the project simple and easy to understand.
+  **- Secure Database Connection:** I used Firebase Firestore for the database. The sensitive service account keys stay safely on the backend, so they are never exposed to the frontend.
+  **- Lightweight Frontend:** No heavy frameworks here. I used vanilla JavaScript to keep the project simple and easy to understand.
 
-  - CORS Handling: I implemented custom middleware in Go to allow the frontend and backend to communicate smoothly during local development.
+  **- CORS Handling:** I implemented custom middleware in Go to allow the frontend and backend to communicate smoothly during local development.
 
-Technology Stack
-Backend: Go (Golang)
-Database: Firebase Cloud Firestore
-Frontend: HTML5, CSS3, Vanilla JavaScript
-Version Control: Git and GitHub
-How to Run Locally
+**Technology Stack**
+
+  **-Backend:** Go (Golang)
+  **-Database:** Firebase Cloud Firestore
+  **-Frontend:** HTML5, CSS3, Vanilla JavaScript
+  **-Version Control:** Git and GitHub
+  
+**How to Run Locally**
+
 If you want to run this project on your own machine, follow these steps.
-Prerequisites
+
+**Prerequisites**
+
 Make sure you have the following installed:
-Go (Golang)
-Git
+   - Go (Golang)
+   - Git
+     
 A Firebase Project with Cloud Firestore enabled.
-Step 1: Clone the Repository
+
+**Step 1: Clone the Repository**
 Open your terminal and clone the project:
 bash
 git clone https://github.com/strongandcreamycoffee/daily-planner.git
 cd daily-planner
-Step 2: Set Up the Backend
+
+**Step 2: Set Up the Backend**
 The backend needs a Firebase Service Account key to connect to the database.
 Go to the backend folder:
 bash
@@ -50,15 +58,16 @@ bash
 
 1
 You should see a message saying the API is running on http://localhost:8083.
-Step 3: Run the Frontend
+
+**Step 3: Run the Frontend**
 Open a new terminal window and go to the frontend folder:
 bash
 
 1
 You can open the index.html file directly in your browser, or use a local server like the VS Code "Live Server" extension.
 Make sure your Go backend is still running in the other terminal window so the frontend can fetch the tasks.
-Project Structure
-text
+
+**Project Structure**
 
 ```daily-planner/
 ├── backend-monorepo/       # Go API Server
